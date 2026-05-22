@@ -1,25 +1,19 @@
 // LeetCode 242: Valid Anagram
-// Topic: Hashing + Strings
-// Approach: Frequency counting using maps
+// Topic: Strings + Sorting
+// Approach: Sort both strings and compare
 // Time Complexity: O(n log n)
-// Space Complexity: O(n)
+// Space Complexity: O(1)
 class Solution {
 public:
     bool isAnagram(string s, string t) {
-    map<char,int>smap;
-    map<char,int>tmap;
-    if(s.size()==t.size()){
-        for(char c : s){
-            smap[c]++;
-        }
-        for(char c : t){
-            tmap[c]++;
-        }
-        if(smap==tmap){
+    sort(s.begin(),s.end());
+    sort(t.begin(),t.end());
+    if(s==t){
         return true;
     }
+    else{
+        return false;
     }
-
-    return false;
     }
 };
+
